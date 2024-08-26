@@ -20,10 +20,12 @@ class Drama:
     def __lt__(self, other):
         return self.year < other.year
     
-    def distribute(self, network):
-        if network == "Disney+":
-            return self.network
-    
+    def rating_and_viewership(self):
+        return self.rating * self.views
+
+    def is_post_2020(self):
+        return self.year > 2020
+
     def get_genre(self):
         return self.genre
     
@@ -39,6 +41,28 @@ def read_drama():
         print(drama)
     return dramas
 
+def create_object():
+    drama1 = Drama("Max and Harry go adventuring", 9.7, "Max, Harry", 9.8, "Romance, Comedy, Adventure", "Kyle", "Kyle", 2023, 24, "LoLClient")
+    drama2 = Drama("Max and Harry go golfing", 10, "Max, Harry", 13.7, "Romance, Comedy", "Kyle", "Kyle", 2025, 24, "LoLClient")
+    
+    print(drama1)
+    print(drama2)
+    print("Drama 1 is newer than Drama 2:", drama1 > drama2)
+    print("Drama 1 Rating * Viewership:", drama1.rating_and_viewership())
+    print("Drama 2 Genre:", drama2.get_genre())
+    print("Is Drama 1 post 2020?", drama1.is_post_2020())
+
+def list_search(dramas):
+    print("\nDramas streamade på Disney+:")
+    for drama in dramas:
+        if drama.network == "Disney+":
+            print(drama.name)
+
 def main():
-    read_drama()
-main()
+    dramas = read_drama()
+    print("\nNya objekt:")
+    create_object()
+    list_search(dramas)
+
+if __name__ == "__main__":
+    main()
