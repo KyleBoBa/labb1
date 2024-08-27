@@ -47,10 +47,10 @@ def create_object():
     
     print(drama1)
     print(drama2)
-    print("Drama 1 is newer than Drama 2:", drama1 > drama2)
-    print("Drama 1 Rating * Viewership:", drama1.rating_and_viewership())
+    print("Drama 1 är nyare än Drama 2:", drama1 > drama2)
+    print("Drama 1 rating * view:", drama1.rating_and_viewership())
     print("Drama 2 Genre:", drama2.get_genre())
-    print("Is Drama 1 post 2020?", drama1.is_post_2020())
+    print("Är Drama 1 post 2020?", drama1.is_post_2020())
 
 def list_search(dramas):
     print("\nDramas streamade på Disney+:")
