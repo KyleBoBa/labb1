@@ -20,7 +20,7 @@ class Drama:
         self.network = network
 #metod för utskrift av objekt i sträng
     def __str__(self):
-        return f"{self.name} ({self.year}) directed by {self.director}"
+        return f"{self.name} ({self.year}) regisserad av {self.director}"
 
 #metod som jämför dramaserier på året, returnerar true om serien är äldre än andra objekt
     def __lt__(self, other):
